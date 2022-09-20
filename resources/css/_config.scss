@@ -1,0 +1,48 @@
+$primary-color: #8C0938;
+$secondary-color : #00A037;
+
+.primary-color {
+    color: $primary-color;
+}
+.primary-color-bg {
+    background-color: $primary-color;
+}
+
+.secondary-color {
+    color: $secondary-color;
+}
+.secondary-color-bg {
+    background-color: $secondary-color;
+}
+
+
+
+// unselect
+%unselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+::-webkit-scrollbar {
+width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background-color: rgb(206, 206, 206);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #2e2327;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #422a33;
+}

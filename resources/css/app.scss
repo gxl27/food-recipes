@@ -1,0 +1,26 @@
+@use "config";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+main {
+    
+    .hero {
+        background-color: config.$primary-color;
+        // background-image: url('/images/screen.png');
+
+    }
+}
+
+.logo {
+    min-width: 200px;
+}
+
+body {
+    background-color: config.$primary-color;
+}
+
+
+
+@import "media";
