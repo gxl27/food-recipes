@@ -13,12 +13,16 @@
   <title>Food-recipes | Find your favourite recipe</title>
 </head>
 
-<body class="mb-48">
+<body>
+
+  {{-- upscreen arrow --}}
+  @include('partials._upscreen')
+  
 
   {{-- navbar --}}
   <x-navbar />
-
-  <main>
+  
+  <main class='container'>
     {{$slot}}
   </main>
 

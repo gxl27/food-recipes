@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +19,17 @@ use App\Http\Controllers\Auth\RegisterController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/register', [RegisterController::class, 'index'])->name('register');
+// Show Register/Create Form
+Route::get('/register', [AuthController::class, 'create'])->name('register')->middleware('guest');
+
+// Create New User
+Route::post('/auth', [AuthController::class, 'store']);
+
+// Log User Out
+Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth');
+
+// Show Login Form
+Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
+
+// Log In User
+Route::post('/auth/authenticate', [AuthController::class, 'authenticate']);

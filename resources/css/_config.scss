@@ -1,5 +1,12 @@
-$primary-color: #8C0938;
-$secondary-color : #00A037;
+
+$primary-color: #E8A23F;
+$secondary-color : #0ECB63;
+$third-color: #EBF1F3;
+$color: #3a3a3a;
+$bg-color: #F3F7F8;
+$font-size: 16px;
+$line-height: 1.5em;
+$font-stack: Poppins, Helvetica, sans-serif;
 
 .primary-color {
     color: $primary-color;
@@ -13,6 +20,22 @@ $secondary-color : #00A037;
 }
 .secondary-color-bg {
     background-color: $secondary-color;
+}
+
+.bg-success {
+    background-color: #E8A23F;
+}
+
+.color-success {
+    color: #E8A23F;
+}
+
+.bg-danger {
+    background-color: #ff0000;
+}
+
+.color-danger {
+    color: #ff0000;
 }
 
 
