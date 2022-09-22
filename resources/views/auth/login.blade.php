@@ -30,7 +30,7 @@
         </div>
   
         <div class="mb-6">
-          <button type="submit" class="primary-color-bg text-white rounded py-2 px-4 hover:bg-black">
+          <button class="primary-color-bg text-white rounded py-2 px-4">
             Sign In
           </button>
         </div>

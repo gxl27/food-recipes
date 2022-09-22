@@ -5,6 +5,11 @@
   <div id="app">
     <vueroot/>
   </div>
+  @guest
+  <div class='w-full, p-8 text:lg flex justify-center'>
+    You must be logged in to see the recipes.  <a href="{{ route('register') }}" class="hover:text-laravel"><span class='color-success mx-2'> Register</span></a> or         <a href="{{ route('login') }}" class="hover:text-laravel"> <span class='color-success mx-2'> Login</span></a>
+  </div>
+  @endguest
 
   @auth
     <x-recipe_new :categories="$categories" />

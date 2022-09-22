@@ -75,5 +75,9 @@ export default {
 </script>
 
 <style lang="scss">
+main {
+  
+  opacity:0.01;
 
+}
 </style>
