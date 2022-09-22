@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
 
@@ -33,3 +33,6 @@ Route::get('/login', [AuthController::class, 'login'])->name('login')->middlewar
 
 // Log In User
 Route::post('/auth/authenticate', [AuthController::class, 'authenticate']);
+
+// this should be in the api file, but the middleware are not working there
+Route::get('/api/category', [CategoryController::class, 'index'])->name('category')->middleware('auth');

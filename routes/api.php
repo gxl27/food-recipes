@@ -25,6 +25,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // recipes
 Route::get('/recipes', [RecipeController::class, 'index'])->name('recipes')->middleware('guest');
 Route::post('/recipes/store', [RecipeController::class, 'store'])->name('recipes.store')->middleware('guest');
+Route::get('/recipes/category/{category}', [RecipeController::class, 'index_by_category'])->name('recipes.category')->middleware('guest');
 Route::post('/recipes/{id}/edit', [RecipeController::class, 'edit'])->name('recipes.edit')->middleware('guest');
 Route::delete('/recipes/{id}/delete', [RecipeController::class, 'destroy'])->name('recipes.delete')->middleware('guest');
 
@@ -41,5 +42,5 @@ Route::post('/directions/{id}/edit', [DirectionController::class, 'edit'])->name
 Route::delete('/directions/{id}/delete', [DirectionController::class, 'destroy'])->name('directions.delete')->middleware('guest');
 Route::get('/directions/{id}', [DirectionController::class, 'show'])->name('directions.show')->middleware('guest');
 
-Route::get('/category', [CategoryController::class, 'index'])->name('category')->middleware('guest');
-Route::get('/category/{id}', [CategoryController::class, 'show'])->name('category.show')->middleware('guest');
+// dont know why the middleware are not working in this files / change the category call into the web file temporally
+// Route::get('/category', [CategoryController::class, 'index'])->name('category')->middleware('auth');

@@ -18,6 +18,15 @@ class RecipeController extends Controller
         return $recipes;
     }
 
+    public function index_by_category(Category $category){
+        
+ 
+        $recipes = Recipe::where('category_id', $category->id)->get();
+        
+        return $recipes;
+
+    }
+
 
     public function store(Request $request){
 
@@ -55,7 +64,7 @@ class RecipeController extends Controller
             'title' => ['required', 'min:3', Rule::unique('recipes', 'title')],
             'calories' => ['required', 'numeric', 'min:20', 'max:10000'],
             'duration' => ['required', 'numeric', 'min:5', 'max:360'],
-            'category_id' => ['required']
+            'category_id_edit' => ['required']
         ]);
         
         $categoryId = Category::where('id', $formFields['category_id']);
@@ -70,8 +79,14 @@ class RecipeController extends Controller
         if($request->hasFile('logo_edit')) {
             $formFields['logo'] = $request->file('logo_edit')->store('logos', 'public');
         }
-        
+
+        // because of the duplicate id of the input, need to update the model in other way
+        $id->category = $formFields['category_id_edit'];
+        unset($formFields['category_id_edit']);
+
+        // dunno why the image cannot be edited and saved in the database
         $id->updatedAt = now();
+        
         $id->update($formFields);
         
         return back()->with('message', 'Updated successfully!');

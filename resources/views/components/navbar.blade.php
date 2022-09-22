@@ -1,11 +1,16 @@
 <header>
   <nav class="flex justify-between items-center container">
     <a href="{{ route('home') }}"><img src="{{asset('images/logo.svg')}}" alt="logo" class="logo" id="logo" /></a>
-    <ul class="flex space-x-2 md:space-x-12 mr-6 text-lg">
+    <ul class="flex space-x-6 md:space-x-12 mr-6 text-lg">
       @auth
       <li>
         <span class="capitalize color-success">
           <i class="fa-solid fa-user hidden md:inline-block"></i> <span class='mx-2'>{{auth()->user()->name}}</span>
+        </span>
+      </li>
+      <li>
+        <span id='btn-recipe-add' class="capitalize cursor-pointer" style='color:#008000'>
+          <i class="fa-solid fa-plus "></i> <span class='mx-2 hidden md:inline-block'>Add recipe</span>
         </span>
       </li>
       <li>

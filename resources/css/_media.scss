@@ -5,4 +5,16 @@
         max-width: unset;
     }
 
+    #app {
+        padding-top:35px;
+        background-color: white;
+    }
+
+    .recipes-list {
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+    }
+
 }
